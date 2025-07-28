@@ -24,8 +24,8 @@ const fadeIn = (direction = 'up', delay = 0) => {
 
 export const ContactSection: React.FC = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5212345678901";
-    const message = "¡Hola! Quiero confirmar mi asistencia a tus XV años 💜";
+    const phoneNumber = "543813294119";
+    const message = "¡Hola Valentina! Quiero confirmar mi asistencia a tus 15 años 💜";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
