@@ -1,68 +1,95 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { MessageCircle, Heart } from 'lucide-react';
+
+const fadeIn = (direction = 'up', delay = 0) => {
+  return {
+    hidden: {
+      opacity: 0,
+      y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
+      x: direction === 'left' ? 40 : direction === 'right' ? -40 : 0,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        delay,
+        ease: 'easeOut',
+      },
+    },
+  };
+};
 
 export const ContactSection: React.FC = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5212345678901"; // Reemplazar con el número real
+    const phoneNumber = "5212345678901";
     const message = "¡Hola! Quiero confirmar mi asistencia a tus XV años 💜";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 relative">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-4 w-32 h-32 sm:top-20 sm:left-20 sm:w-64 sm:h-64 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-4 w-32 h-32 sm:bottom-20 sm:right-20 sm:w-64 sm:h-64 bg-purple-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
-      
-      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-[2rem] p-8 sm:p-16 shadow-2xl border border-white/50">
-          <div className="mb-8 sm:mb-12">
-            <div className="bg-gradient-to-br from-green-100 to-blue-100 w-20 h-20 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8 shadow-xl">
-              <MessageCircle className="h-10 w-10 sm:h-16 sm:w-16 text-green-600" />
+    <motion.section
+      variants={fadeIn('up', 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 relative"
+    >
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.div
+          variants={fadeIn('up', 0.2)}
+          className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 sm:p-16 shadow-2xl border border-white/60"
+        >
+          <div className="mb-10">
+            <div className="bg-gradient-to-br from-purple-200 to-pink-200 w-20 h-20 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <MessageCircle className="h-10 w-10 text-purple-600" />
             </div>
-            
-            <h3 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-800 mb-6 sm:mb-8 italic" style={{ fontFamily: 'cursive' }}>
-              confirma tu asistencia
+
+            <h3
+              className="text-4xl sm:text-6xl font-bold text-gray-800 mb-4 italic"
+              style={{ fontFamily: "'Dancing Script', cursive" }}
+            >
+              Confirma tu Asistencia
             </h3>
-            
-            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full mb-6 sm:mb-8"></div>
+
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
           </div>
-          
-          <p className="text-gray-700 text-base sm:text-xl leading-relaxed mb-8 sm:mb-12 lowercase tracking-wide px-4">
-            tu presencia es muy importante para mí. por favor confirma tu asistencia 
-            para poder preparar todo con el cariño que te mereces.
+
+          <p className="text-gray-700 text-base sm:text-xl leading-relaxed mb-10 px-4 lowercase tracking-wide">
+            Tu presencia es muy importante para mí. por favor confirmá tu asistencia
+            para poder preparar todo con el cariño que te merecés.
           </p>
-          
-          <button
+
+          <motion.button
             onClick={handleWhatsAppClick}
-            className="bg-gradient-to-r from-green-500 to-green-600 text-white py-4 sm:py-6 px-8 sm:px-12 rounded-2xl sm:rounded-3xl font-medium text-lg sm:text-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-3 sm:space-x-4 mx-auto lowercase tracking-wide"
+            whileHover={{ scale: 1.05 }}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 px-8 sm:py-5 sm:px-12 rounded-2xl font-semibold text-lg sm:text-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center space-x-3 mx-auto"
           >
-            <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8" />
-            <span>confirmar por whatsapp</span>
-          </button>
-          
-          <div className="mt-8 sm:mt-12">
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-green-100">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
-                <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-purple-500" />
-                <span className="text-gray-600 text-sm sm:text-base lowercase">fecha límite</span>
-                <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-purple-500" />
-              </div>
-              <p className="text-gray-700 text-base sm:text-lg font-medium lowercase">
-                hasta el 10 de junio para confirmar tu lugar
-              </p>
+            <MessageCircle className="h-6 w-6" />
+            <span>Confirmar por Whatsapp</span>
+          </motion.button>
+
+          <div className="mt-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
+            <div className="flex items-center justify-center space-x-3 mb-3">
+              <Heart className="h-5 w-5 text-purple-500" />
+              <span className="text-gray-600 text-sm sm:text-base lowercase">Fecha Límite</span>
+              <Heart className="h-5 w-5 text-purple-500" />
             </div>
-          </div>
-          
-          <div className="mt-8 sm:mt-12 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8">
-            <p className="text-base sm:text-xl font-medium lowercase tracking-wide">
-              ¡espero verte en mi gran día! 💜
+            <p className="text-gray-700 text-base sm:text-lg font-medium lowercase">
+              Hasta el 8 de agosto para confirmar tu lugar
             </p>
           </div>
-        </div>
+
+          <div className="mt-8 bg-gradient-to-r from-pink-400 to-purple-500 text-white rounded-2xl p-6 shadow-md">
+            <p className="text-base sm:text-xl font-medium tracking-wide">
+              ¡Espero verte en mi gran día! 💜
+            </p>
+          </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
