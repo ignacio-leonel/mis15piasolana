@@ -110,7 +110,7 @@ export const PartySection: React.FC<PartySectionProps> = ({ show }) => {
                 icon: <Calendar className="h-12 w-12 sm:h-16 sm:w-16 text-indigo-700" />,
                 title: 'Fecha',
                 subtitle: 'sábado',
-                detail: '15 de junio, 2024'
+                detail: '8 de agosto, 2025'
               },
               {
                 icon: <Clock className="h-12 w-12 sm:h-16 sm:w-16 text-indigo-700" />,
