@@ -26,11 +26,13 @@ export const Footer: React.FC = () => {
           </div>
 
           <h4 className="text-4xl sm:text-6xl font-bold text-gray-800 mb-6 italic" style={{ fontFamily: "'Dancing Script', cursive" }}>
-            ¡Gracias por ser parte de mi historia!
+            ¡Gracias Por Ser Parte De Mi Historia!
           </h4>
 
-          <p className="text-gray-700 text-base sm:text-xl leading-relaxed mb-10 px-4 lowercase tracking-wide">
-            Este día marca el inicio de una nueva etapa en mi vida, y no hay nada que me haga más feliz que compartirlo contigo. Tu amistad y cariño son los regalos más preciados que puedo recibir.
+          <p className="text-gray-700 text-base sm:text-xl leading-relaxed mb-6 px-4 tracking-wide">
+            Este día marca el inicio de una nueva etapa en mi vida.  
+            No hay nada que me haga más feliz que compartirlo con vos.  
+            Tu amistad y cariño son los regalos más valiosos que puedo recibir.
           </p>
 
           <div className="flex justify-center space-x-8 mb-10">
@@ -39,9 +41,25 @@ export const Footer: React.FC = () => {
             <Sparkles className="h-10 w-10 sm:h-12 sm:w-12 text-purple-600 animate-pulse drop-shadow-md" style={{ animationDelay: '0.8s' }} />
           </div>
 
-          <div className="mt-6 bg-gradient-to-r from-pink-400 to-purple-500 text-white rounded-2xl p-6 shadow-md">
-            <p className="text-base sm:text-xl font-medium tracking-wide">
-              Con todo mi amor • Mis 15 años • 8 de agosto, 2025
+        
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+            className="mt-12 px-4 sm:px-10"
+          >
+            <p className="text-gray-800 text-base sm:text-xl font-medium leading-relaxed">
+              Tu presencia en este día tan especial es lo más importante.  
+              Pero si deseás dejarme algún presente, estará mi mesa de regalos.  
+              También podés transferirme a mi cuenta.  
+              Mi prioridad es que te diviertas y la pases bien.
+            </p>
+          </motion.div>
+            <div className="mt-6 bg-gradient-to-r from-pink-400 to-purple-500 text-white rounded-2xl p-6 shadow-md">
+            <p className="text-white text-2xl font-semibold tracking-wider">
+              valenmolina0
             </p>
           </div>
         </div>
