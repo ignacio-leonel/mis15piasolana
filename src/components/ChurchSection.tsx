@@ -6,13 +6,23 @@ interface ChurchSectionProps {
   show: boolean;
 }
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25, // Aparecen de a una suavemente
+    },
+  },
+};
+
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 1.2 + i * 0.4, duration: 0.8, ease: 'easeOut' }
-  })
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const elementVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
 const iconColors = [
@@ -24,47 +34,65 @@ const iconColors = [
 export const ChurchSection: React.FC<ChurchSectionProps> = ({ show }) => {
   if (!show) return null;
 
+  const cards = [
+    {
+      icon: <Calendar className="h-12 w-12 sm:h-16 sm:w-16 text-pink-600" />,
+      title: 'Fecha',
+      subtitle: 'Martes',
+      detail: '30 de Septiembre, 2025'
+    },
+    {
+      icon: <Clock className="h-12 w-12 sm:h-16 sm:w-16 text-pink-600" />,
+      title: 'Hora',
+      subtitle: '20:30 PM',
+      detail: 'Puntualidad por favor'
+    },
+    {
+      icon: <MapPin className="h-12 w-12 sm:h-16 sm:w-16 text-pink-600" />,
+      title: 'Lugar',
+      subtitle: 'Catedral de Tucumán',
+      detail: (
+        <a
+          href="https://maps.app.goo.gl/5wKDa2wuZadUwymSA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-pink-600 underline hover:text-pink-800 transition-colors duration-300"
+        >
+          Av. 24 de Septiembre 420. B.R.S. Tucumán
+        </a>
+      )
+    }
+  ];
+
   return (
     <motion.section
       className="py-16 sm:py-24 bg-gradient-to-br from-pink-50 via-white to-rose-50 relative"
-      initial={{ opacity: 0, y: 80 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-pink-100/30 to-rose-100/30"></div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
+        {/* Bloque principal con animación secuencial */}
         <motion.div
           className="text-center mb-12 sm:mb-20"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
           {/* Ícono principal */}
-          <div className="inline-block relative mb-8 sm:mb-12">
-            <motion.div
-              className="bg-gradient-to-br from-pink-100 to-rose-100 w-20 h-20 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto shadow-xl"
-              initial={{ scale: 0.7, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
+          <motion.div className="inline-block relative mb-8 sm:mb-12" variants={elementVariants}>
+            <div className="bg-gradient-to-br from-pink-100 to-rose-100 w-20 h-20 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto shadow-xl">
               <Church className="h-10 w-10 sm:h-16 sm:w-16 text-pink-600" />
-            </motion.div>
-            <motion.div
-              className="absolute -inset-8 bg-pink-200/30 rounded-full -z-10 animate-pulse"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            />
-          </div>
+            </div>
+          </motion.div>
 
           {/* Título */}
           <motion.h3
             className="text-4xl sm:text-7xl md:text-8xl font-bold text-gray-800 mb-6 sm:mb-8"
             style={{ fontFamily: "'Dancing Script', cursive" }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            variants={elementVariants}
           >
             Ceremonia
           </motion.h3>
@@ -72,9 +100,7 @@ export const ChurchSection: React.FC<ChurchSectionProps> = ({ show }) => {
           {/* Separador con corazón */}
           <motion.div
             className="flex items-center justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            variants={elementVariants}
           >
             <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-r from-transparent to-pink-400"></div>
             <Heart className="h-5 w-5 sm:h-8 sm:w-8 text-pink-400 animate-pulse" />
@@ -85,9 +111,7 @@ export const ChurchSection: React.FC<ChurchSectionProps> = ({ show }) => {
           <motion.p
             className="text-gray-600 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed px-4 italic"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            variants={elementVariants}
           >
             Te invito a acompañarme en este momento sagrado donde recibiré las bendiciones para mi nueva etapa de vida.
           </motion.p>
@@ -96,53 +120,19 @@ export const ChurchSection: React.FC<ChurchSectionProps> = ({ show }) => {
         {/* Tarjetas */}
         <motion.div
           className="bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-[2rem] p-8 sm:p-16 shadow-2xl border border-white/50 relative overflow-hidden"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
           <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-pink-400 via-rose-400 to-pink-500"></div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 text-center">
-            {[
-              {
-                icon: <Calendar className="h-12 w-12 sm:h-16 sm:w-16 text-pink-600" />,
-                title: 'Fecha',
-                subtitle: 'Martes',
-                detail: '30 de Septiembre, 2025'
-              },
-              {
-                icon: <Clock className="h-12 w-12 sm:h-16 sm:w-16 text-pink-600" />,
-                title: 'Hora',
-                subtitle: '20:30 PM',
-                detail: 'Puntualidad por favor'
-              },
-              {
-                icon: <MapPin className="h-12 w-12 sm:h-16 sm:w-16 text-pink-600" />,
-                title: 'Lugar',
-                subtitle: 'Catedral de Tucumán',
-                detail: (
-                  <a
-                    href="https://maps.app.goo.gl/5wKDa2wuZadUwymSA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-pink-600 underline hover:text-pink-800 transition-colors duration-300"
-                  >
-                    Av. 24 de Septiembre 420. B.R.S. Tucumán
-                  </a>
-                )
-              }
-            ].map((card, i) => (
-              <motion.div
-                className="group"
-                key={card.title}
-                custom={i}
-                initial="hidden"
-                animate="visible"
-                variants={cardVariants}
-              >
+            {cards.map((card, i) => (
+              <motion.div key={card.title} variants={cardVariants} className="group">
                 <motion.div
-                  className={`bg-gradient-to-br ${iconColors[i]} w-24 h-24 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8 group-hover:scale-110 transition-all duration-500 shadow-lg`}
-                  whileHover={{ scale: 1.1 }}
+                  className={`bg-gradient-to-br ${iconColors[i]} w-24 h-24 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8 shadow-lg`}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
                 >
                   {card.icon}
                 </motion.div>
@@ -171,9 +161,7 @@ export const ChurchSection: React.FC<ChurchSectionProps> = ({ show }) => {
           {/* Mensaje final */}
           <motion.div
             className="text-center mt-12 sm:mt-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2.2 }}
+            variants={elementVariants}
           >
             <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-pink-100">
               <p
