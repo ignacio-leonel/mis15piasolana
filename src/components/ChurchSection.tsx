@@ -58,7 +58,7 @@ export const ChurchSection: React.FC<ChurchSectionProps> = ({ show }) => {
           rel="noopener noreferrer"
           className="text-pink-600 underline hover:text-pink-800 transition-colors duration-300"
         >
-          Av. 24 de Septiembre 420. B.R.S. Tucumán
+          Av. 24 de Septiembre 420. Tucumán
         </a>
       )
     }
