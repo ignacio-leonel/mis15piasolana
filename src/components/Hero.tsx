@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Star, Sparkles } from 'lucide-react';
+import { Heart, Sparkles } from 'lucide-react';
 import { useCountdown } from '../hooks/useCountdown';
 import { motion } from 'framer-motion';
 
@@ -26,37 +26,10 @@ export const Hero: React.FC = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1 }}
         />
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 z-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-        />
+        
       </div>
       
-      {/* Elementos decorativos flotantes */}
-      <div className="absolute inset-0 z-30 overflow-hidden">
-        <motion.div
-          className="absolute top-10 left-4 w-16 h-16 sm:top-20 sm:left-20 sm:w-32 sm:h-32 border-2 border-white/30 rounded-full animate-pulse"
-          animate={{ y: [0, 20, 0] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-        />
-        <motion.div
-          className="absolute top-20 right-8 w-12 h-12 sm:top-40 sm:right-32 sm:w-24 sm:h-24 border-2 border-white/30 rounded-full animate-pulse"
-          animate={{ x: [0, 15, 0] }}
-          transition={{ repeat: Infinity, duration: 2, delay: 1 }}
-        />
-        <motion.div
-          className="absolute bottom-16 left-8 w-20 h-20 sm:bottom-32 sm:left-40 sm:w-40 sm:h-40 border-2 border-white/30 rounded-full animate-pulse"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ repeat: Infinity, duration: 2.5, delay: 2 }}
-        />
-        <motion.div
-          className="absolute bottom-10 right-4 w-14 h-14 sm:bottom-20 sm:right-20 sm:w-28 sm:h-28 border-2 border-white/30 rounded-full animate-pulse"
-          animate={{ x: [0, -15, 0] }}
-          transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-        />
-      </div>
+      
       
       <motion.div
         className="relative text-center z-40 px-4 max-w-6xl mx-auto py-8 text-white"
@@ -64,14 +37,7 @@ export const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.5 }}
       >
-        <motion.div
-          className="mb-6 sm:mb-8"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          <Sparkles className="h-8 w-8 sm:h-12 sm:w-12 text-pink-300 animate-bounce mx-auto mb-6 drop-shadow-lg" />
-        </motion.div>
+        
         
         <motion.h1
           className="text-2xl sm:text-4xl md:text-6xl font-light mb-4 sm:mb-6 tracking-wide drop-shadow-lg"
@@ -101,10 +67,7 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1.8 }}
           >
-            <div className="relative">
-              <Star className="h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 text-yellow-400 animate-spin drop-shadow-lg" style={{ animationDuration: '10s' }} />
-              <div className="absolute inset-0 bg-yellow-200/30 blur-2xl rounded-full animate-pulse"></div>
-            </div>
+           
           </motion.div>
         </motion.div>
         
@@ -123,7 +86,7 @@ export const Hero: React.FC = () => {
         >
           <div className="w-40 sm:w-64 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mb-4 sm:mb-6"></div>
           <p
-            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed lowercase tracking-wide max-w-2xl mx-auto drop-shadow-lg"
+            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide max-w-2xl mx-auto drop-shadow-lg"
             style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontStyle: 'italic' }}
           >
             Un momento especial que quiero compartir contigo
@@ -142,31 +105,31 @@ export const Hero: React.FC = () => {
             className="text-xl sm:text-2xl font-medium mb-6 sm:mb-8 lowercase tracking-wide drop-shadow-lg"
             style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
           >
-            faltan
+            Faltan
           </h4>
           <div className="grid grid-cols-4 gap-4 sm:gap-8 text-center">
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
             >
-              <div className="text-2xl sm:text-4xl font-bold text-pink-300 drop-shadow-lg">{timeLeft.days}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-white drop-shadow-lg">{timeLeft.days}</div>
               <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">días</div>
             </motion.div>
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
             >
-              <div className="text-2xl sm:text-4xl font-bold text-rose-400 drop-shadow-lg">{timeLeft.hours}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-white drop-shadow-lg">{timeLeft.hours}</div>
               <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">horas</div>
             </motion.div>
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
             >
-              <div className="text-2xl sm:text-4xl font-bold text-pink-200 drop-shadow-lg">{timeLeft.minutes}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-white drop-shadow-lg">{timeLeft.minutes}</div>
               <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">min</div>
             </motion.div>
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
             >
-              <div className="text-2xl sm:text-4xl font-bold text-pink-400 drop-shadow-lg">{timeLeft.seconds}</div>
+              <div className="text-2xl sm:text-4xl font-bold text-white drop-shadow-lg">{timeLeft.seconds}</div>
               <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">seg</div>
             </motion.div>
           </div>

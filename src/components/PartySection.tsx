@@ -86,7 +86,7 @@ export const PartySection: React.FC<PartySectionProps> = ({ show }) => {
           </motion.div>
 
             <motion.p
-            className="text-gray-600 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed lowercase tracking-wide px-4"
+            className="text-gray-600 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed tracking-wide px-4"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}

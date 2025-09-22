@@ -9,7 +9,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
 function App() {
-  const { isPlaying, toggleMusic } = useAudio('music/cancion.mp3');
+  const { isPlaying, toggleMusic } = useAudio('music/canciontini.mp3');
   
   // Control de módulos - cambiar a false para ocultar secciones
   const showChurchSection = true;
