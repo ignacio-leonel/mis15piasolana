@@ -4,14 +4,14 @@ import { useCountdown } from '../hooks/useCountdown';
 import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
-  const timeLeft = useCountdown('2025-08-08T20:00:00');
+  const timeLeft = useCountdown('2025-10-04T22:00:00');
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background with photo */}
+      {/* Fondo animado con foto */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-blue-900/40 to-indigo-900/40 z-10"
+          className="absolute inset-0 bg-gradient-to-br from-pink-200/40 via-pink-300/40 to-rose-200/40 z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
@@ -19,22 +19,22 @@ export const Hero: React.FC = () => {
         <motion.div
           className="absolute inset-0 bg-cover bg-center bg-fixed animate-pulse"
           style={{
-            backgroundImage: "url('/images/valentina.jpeg')",
-            animationDuration: '8s'
+            backgroundImage: "url('/images/pia2.jpg')",
+            animationDuration: '4s'
           }}
-          initial={{ scale: 1.1, opacity: 0.7 }}
+          initial={{ scale: 1.1, opacity: 0.3 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
         />
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-20"
+          className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 z-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.5 }}
         />
       </div>
       
-      {/* Floating decorative elements */}
+      {/* Elementos decorativos flotantes */}
       <div className="absolute inset-0 z-30 overflow-hidden">
         <motion.div
           className="absolute top-10 left-4 w-16 h-16 sm:top-20 sm:left-20 sm:w-32 sm:h-32 border-2 border-white/30 rounded-full animate-pulse"
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <Sparkles className="h-8 w-8 sm:h-12 sm:w-12 text-purple-300 animate-bounce mx-auto mb-6 drop-shadow-lg" />
+          <Sparkles className="h-8 w-8 sm:h-12 sm:w-12 text-pink-300 animate-bounce mx-auto mb-6 drop-shadow-lg" />
         </motion.div>
         
         <motion.h1
@@ -90,11 +90,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 1.4 }}
         >
           <motion.h2
-            className="text-6xl sm:text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-purple-300 via-blue-300 to-indigo-300 bg-clip-text text-transparent mb-4 leading-none italic drop-shadow-2xl"
+            className="text-6xl sm:text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-pink-300 via-rose-300 to-pink-400 bg-clip-text text-transparent mb-4 leading-none italic drop-shadow-2xl"
             style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 700 }}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.6 }}
           >
             Mis 15 años
           </motion.h2>
@@ -105,20 +102,17 @@ export const Hero: React.FC = () => {
             transition={{ duration: 1, delay: 1.8 }}
           >
             <div className="relative">
-              <Star className="h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 text-yellow-300 animate-spin drop-shadow-lg" style={{ animationDuration: '10s' }} />
-              <div className="absolute inset-0 bg-yellow-300/30 blur-2xl rounded-full animate-pulse"></div>
+              <Star className="h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 text-yellow-400 animate-spin drop-shadow-lg" style={{ animationDuration: '10s' }} />
+              <div className="absolute inset-0 bg-yellow-200/30 blur-2xl rounded-full animate-pulse"></div>
             </div>
           </motion.div>
         </motion.div>
         
         <motion.h3
-          className="text-4xl sm:text-6xl md:text-8xl font-bold text-purple-300 mb-8 sm:mb-12 italic drop-shadow-lg"
+          className="text-4xl sm:text-6xl md:text-8xl font-bold text-pink-300 mb-8 sm:mb-12 italic drop-shadow-lg"
           style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 700 }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2 }}
         >
-          Valentina
+          Pía Solana
         </motion.h3>
         
         <motion.div
@@ -137,7 +131,7 @@ export const Hero: React.FC = () => {
           <div className="w-40 sm:w-64 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mt-4 sm:mt-6"></div>
         </motion.div>
         
-        {/* Modern countdown timer */}
+        {/* Countdown */}
         <motion.div
           className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-10 shadow-2xl border border-white/20 max-w-lg mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -153,39 +147,27 @@ export const Hero: React.FC = () => {
           <div className="grid grid-cols-4 gap-4 sm:gap-8 text-center">
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 2.6 }}
             >
-              <div className="text-2xl sm:text-4xl font-bold text-purple-300 drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>{timeLeft.days}</div>
-              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>días</div>
+              <div className="text-2xl sm:text-4xl font-bold text-pink-300 drop-shadow-lg">{timeLeft.days}</div>
+              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">días</div>
             </motion.div>
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 2.7 }}
             >
-              <div className="text-2xl sm:text-4xl font-bold text-blue-300 drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>{timeLeft.hours}</div>
-              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>horas</div>
+              <div className="text-2xl sm:text-4xl font-bold text-rose-400 drop-shadow-lg">{timeLeft.hours}</div>
+              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">horas</div>
             </motion.div>
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 2.8 }}
             >
-              <div className="text-2xl sm:text-4xl font-bold text-indigo-300 drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>{timeLeft.minutes}</div>
-              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>min</div>
+              <div className="text-2xl sm:text-4xl font-bold text-pink-200 drop-shadow-lg">{timeLeft.minutes}</div>
+              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">min</div>
             </motion.div>
             <motion.div
               className="bg-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-sm border border-white/20"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 2.9 }}
             >
-              <div className="text-2xl sm:text-4xl font-bold text-purple-300 drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>{timeLeft.seconds}</div>
-              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>seg</div>
+              <div className="text-2xl sm:text-4xl font-bold text-pink-400 drop-shadow-lg">{timeLeft.seconds}</div>
+              <div className="text-xs sm:text-sm text-white/80 lowercase mt-1">seg</div>
             </motion.div>
           </div>
         </motion.div>

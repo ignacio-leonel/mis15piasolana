@@ -24,8 +24,8 @@ const fadeIn = (direction = 'up', delay = 0) => {
 
 export const ContactSection: React.FC = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "543813294119";
-    const message = "¡Hola Valentina! Quiero confirmar mi asistencia a tus 15 años 💜";
+    const phoneNumber = "543816110699 ";
+    const message = "¡Hola Pía! Quiero confirmar mi asistencia a tus 15 años 💕";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -36,7 +36,7 @@ export const ContactSection: React.FC = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 relative"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 relative"
     >
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
@@ -44,8 +44,8 @@ export const ContactSection: React.FC = () => {
           className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 sm:p-16 shadow-2xl border border-white/60"
         >
           <div className="mb-10">
-            <div className="bg-gradient-to-br from-purple-200 to-pink-200 w-20 h-20 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-              <MessageCircle className="h-10 w-10 text-purple-600" />
+            <div className="bg-gradient-to-br from-pink-200 to-rose-200 w-20 h-20 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <MessageCircle className="h-10 w-10 text-pink-600" />
             </div>
 
             <h3
@@ -55,7 +55,7 @@ export const ContactSection: React.FC = () => {
               Confirma tu Asistencia
             </h3>
 
-            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-pink-400 to-rose-400 mx-auto rounded-full mb-6"></div>
           </div>
 
           <p className="text-gray-700 text-base sm:text-xl leading-relaxed mb-10 px-4 lowercase tracking-wide">
@@ -66,26 +66,26 @@ export const ContactSection: React.FC = () => {
           <motion.button
             onClick={handleWhatsAppClick}
             whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 px-8 sm:py-5 sm:px-12 rounded-2xl font-semibold text-lg sm:text-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center space-x-3 mx-auto"
+            className="bg-gradient-to-r from-pink-500 to-rose-500 text-white py-4 px-8 sm:py-5 sm:px-12 rounded-2xl font-semibold text-lg sm:text-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center space-x-3 mx-auto"
           >
             <MessageCircle className="h-6 w-6" />
             <span>Confirmar por Whatsapp</span>
           </motion.button>
 
-          <div className="mt-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
+          <div className="mt-10 bg-gradient-to-r from-pink-100 to-rose-100 rounded-2xl p-6 border border-pink-200">
             <div className="flex items-center justify-center space-x-3 mb-3">
-              <Heart className="h-5 w-5 text-purple-500" />
+              <Heart className="h-5 w-5 text-pink-500" />
               <span className="text-gray-600 text-sm sm:text-base lowercase">Fecha Límite</span>
-              <Heart className="h-5 w-5 text-purple-500" />
+              <Heart className="h-5 w-5 text-pink-500" />
             </div>
             <p className="text-gray-700 text-base sm:text-lg font-medium lowercase">
-              Hasta el 8 de agosto para confirmar tu lugar
+              Hasta el 30 de septiembre para confirmar tu lugar
             </p>
           </div>
 
-          <div className="mt-8 bg-gradient-to-r from-pink-400 to-purple-500 text-white rounded-2xl p-6 shadow-md">
+          <div className="mt-8 bg-gradient-to-r from-pink-400 to-rose-500 text-white rounded-2xl p-6 shadow-md">
             <p className="text-base sm:text-xl font-medium tracking-wide">
-              ¡Espero verte en mi gran día! 💜
+              ¡Espero verte en mi gran día! 💕
             </p>
           </div>
         </motion.div>

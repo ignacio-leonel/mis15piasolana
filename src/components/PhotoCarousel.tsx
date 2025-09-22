@@ -3,13 +3,20 @@ import { Camera, Star, ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const galleryImages = [
-  '/images/valen1.jpeg',
-  '/images/valen2.jpeg',
-  '/images/valen3.jpeg',
-  '/images/valen4.jpeg',
-  '/images/valen5.jpeg',
-  '/images/valen6.jpeg',
-  '/images/valen7.jpeg',
+  '/images/pia4.jpg',
+  '/images/pia2.jpg',
+  '/images/pia3.jpg',
+  '/images/pia1.jpg',
+  '/images/pia5.jpg',
+  '/images/pia6.jpg',
+  '/images/pia7.jpg',
+  '/images/pia8.jpg',
+  '/images/pia9.jpg',
+  '/images/pia10.jpg',
+  '/images/pia11.jpg',
+  '/images/pia12.jpg',
+  '/images/pia13.jpg',
+  '/images/pia14.jpg',
 ];
 
 const fadeInVariants = {
@@ -46,12 +53,12 @@ export const PhotoCarousel: React.FC = () => {
 
   return (
     <motion.section
-      className="py-16 sm:py-24 bg-gradient-to-br from-purple-50 via-purple-100 to-indigo-50 relative overflow-hidden"
+      className="py-16 sm:py-24 bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 relative overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={fadeInVariants}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-100/20 to-indigo-100/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-100/20 to-rose-100/20"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <motion.div
@@ -61,15 +68,15 @@ export const PhotoCarousel: React.FC = () => {
         >
           <div className="inline-block relative mb-8 sm:mb-12">
             <motion.div
-              className="bg-gradient-to-br from-purple-200 to-indigo-300 w-20 h-20 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto shadow-xl"
+              className="bg-gradient-to-br from-pink-200 to-rose-300 w-20 h-20 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto shadow-xl"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Camera className="h-10 w-10 sm:h-16 sm:w-16 text-indigo-700" />
+              <Camera className="h-10 w-10 sm:h-16 sm:w-16 text-rose-700" />
             </motion.div>
             <motion.div
-              className="absolute -inset-8 bg-purple-300/30 rounded-full -z-10 animate-pulse"
+              className="absolute -inset-8 bg-pink-300/30 rounded-full -z-10 animate-pulse"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -90,9 +97,9 @@ export const PhotoCarousel: React.FC = () => {
             custom={2}
             variants={fadeInVariants}
           >
-            <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-r from-transparent to-purple-400"></div>
-            <Star className="h-5 w-5 sm:h-8 sm:w-8 text-purple-400" />
-            <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-l from-transparent to-purple-400"></div>
+            <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-r from-transparent to-pink-400"></div>
+            <Star className="h-5 w-5 sm:h-8 sm:w-8 text-yellow-400" />
+            <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-l from-transparent to-pink-400"></div>
           </motion.div>
 
           <motion.p
@@ -134,14 +141,14 @@ export const PhotoCarousel: React.FC = () => {
 
                     {position === 0 && (
                       <>
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gradient-to-br from-pink-400/10 to-rose-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                           <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                             <Camera className="h-8 w-8 sm:h-12 sm:w-12 text-white mx-auto mb-3 animate-bounce drop-shadow-lg" />
                             <span className="text-white text-sm sm:text-lg font-medium lowercase drop-shadow-lg">ver imagen</span>
                           </div>
                         </div>
 
-                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-0 group-hover:scale-100 rounded-full p-3 bg-gradient-to-br from-purple-400/50 to-indigo-400/50 animate-pulse shadow-lg">
+                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-0 group-hover:scale-100 rounded-full p-3 bg-gradient-to-br from-pink-400/50 to-rose-400/50 animate-pulse shadow-lg">
                           <Heart className="h-6 w-6 text-white drop-shadow-lg" />
                         </div>
                       </>
@@ -149,7 +156,7 @@ export const PhotoCarousel: React.FC = () => {
                   </div>
 
                   {position === 0 && (
-                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-400/20 to-indigo-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute -inset-4 bg-gradient-to-r from-pink-400/20 to-rose-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   )}
                 </div>
               </motion.div>
@@ -178,7 +185,7 @@ export const PhotoCarousel: React.FC = () => {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
-                  idx === currentIndex ? 'bg-purple-500 scale-125' : 'bg-gray-300 hover:bg-gray-400'
+                  idx === currentIndex ? 'bg-pink-500 scale-125' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
             ))}
