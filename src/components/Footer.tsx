@@ -84,6 +84,12 @@ export const Footer: React.FC = () => {
               También podés transferirme a mi cuenta.  
               Mi prioridad es que te diviertas y la pases bien.
             </p>
+
+            {/* Dress code */}
+            <p className="text-gray-700 text-base sm:text-lg mt-6 italic">
+              Código de vestimenta: elegante sport.  
+              Se sugiere cualquier color, excepto rojo y plata (reservados para la cumpleañera).
+            </p>
           </motion.div>
 
           {/* Caja con usuario */}
