@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 1.4 }}
         >
           <motion.h2
-            className="text-6xl sm:text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-pink-300 via-rose-300 to-pink-400 bg-clip-text text-transparent mb-4 leading-none italic drop-shadow-2xl"
+            className="text-6xl sm:text-9xl md:text-[12rem] font-bold bg-white bg-clip-text text-transparent mb-4 leading-none italic drop-shadow-2xl"
             style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 700 }}
           >
             Mis 15 años
