@@ -44,7 +44,7 @@ export const PartySection: React.FC<PartySectionProps> = ({ show }) => {
     {
       icon: <Clock className="h-12 w-12 sm:h-16 sm:w-16 text-rose-600" />,
       title: 'Hora',
-      subtitle: '22:00 pm'
+      subtitle: '21:00 pm'
     },
     {
       icon: <MapPin className="h-12 w-12 sm:h-16 sm:w-16 text-rose-600" />,
